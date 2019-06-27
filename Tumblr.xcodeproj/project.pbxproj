@@ -18,6 +18,7 @@
 		FE0CE89422C5344C00BDC251 /* TumblrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CE89322C5344C00BDC251 /* TumblrTests.m */; };
 		FE0CE89F22C5344C00BDC251 /* TumblrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0CE89E22C5344C00BDC251 /* TumblrUITests.m */; };
 		FEBA3E8722C5351900204685 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBA3E8622C5351900204685 /* PhotosViewController.m */; };
+		FEBA3E8A22C539A800204685 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBA3E8922C539A800204685 /* PhotoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,9 @@
 		FE0CE89E22C5344C00BDC251 /* TumblrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TumblrUITests.m; sourceTree = "<group>"; };
 		FE0CE8A022C5344C00BDC251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBA3E8522C5351900204685 /* PhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
-		FEBA3E8622C5351900204685 /* PhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		FEBA3E8622C5351900204685 /* PhotosViewController.m */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		FEBA3E8822C539A800204685 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		FEBA3E8922C539A800204685 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				FE0CE88922C5344C00BDC251 /* main.m */,
 				FEBA3E8522C5351900204685 /* PhotosViewController.h */,
 				FEBA3E8622C5351900204685 /* PhotosViewController.m */,
+				FEBA3E8822C539A800204685 /* PhotoCell.h */,
+				FEBA3E8922C539A800204685 /* PhotoCell.m */,
 			);
 			path = Tumblr;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBA3E8A22C539A800204685 /* PhotoCell.m in Sources */,
 				FE0CE88A22C5344C00BDC251 /* main.m in Sources */,
 				FEBA3E8722C5351900204685 /* PhotosViewController.m in Sources */,
 				FE0CE87C22C5344B00BDC251 /* AppDelegate.m in Sources */,
