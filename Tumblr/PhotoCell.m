@@ -8,6 +8,7 @@
 
 #import "PhotoCell.h"
 
+
 @implementation PhotoCell
 
 - (void)awakeFromNib {
@@ -20,5 +21,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

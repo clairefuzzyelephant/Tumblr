@@ -7,6 +7,8 @@
 //
 
 #import "PhotosViewController.h"
+#import "PhotoCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface PhotosViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -42,7 +44,10 @@
          NSDictionary *responseDictionary = dataDictionary[@"response"];
          self.posts = responseDictionary[@"posts"];
          // TODO: Reload the table view
+         [self.tableView reloadData];
+
       }
+      
    }];
    [task resume];
 }
@@ -58,14 +63,29 @@
 }
 */
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = [NSString stringWithFormat: @"This is row %ld", (long)indexPath.row];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   PhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell" forIndexPath:indexPath];
+   
+//    UITableViewCell *cell = [[UITableViewCell alloc] init];
+//    cell.textLabel.text = [NSString stringWithFormat: @"This is row %ld", (long)indexPath.row];
+   
+   NSDictionary *post = self.posts[indexPath.row];
+   NSArray *photos = post[@"photos"];
+   if(photos){
+      NSDictionary *photo = photos[0];
+      NSDictionary *originalSize = photo[@"original_size"];
+      NSString *urlString = originalSize[@"url"];
+      NSURL *url = [NSURL URLWithString:urlString];
+      //cell.photoView.image = nil;
+      [cell.photoView setImageWithURL: url];
+      NSLog(@"%@", url);
+   }
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+   
 }
 
 
